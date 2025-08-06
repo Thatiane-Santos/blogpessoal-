@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPip
 import { Tema } from "../entities/tema.entity";
 import { TemaService } from "../services/tema.services";
 
-@Controller("/temas")
+@Controller('/temas')
 export class TemaController {
   constructor(private readonly temaService: TemaService) { }
 
@@ -11,7 +11,7 @@ export class TemaController {
   findAll(): Promise<Tema[]> {
     return this.temaService.findAll();
   }
-
+  
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
   findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
