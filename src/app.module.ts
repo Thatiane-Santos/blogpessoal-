@@ -19,7 +19,7 @@ import { DevService } from "./data/services/dev.service";
       
       ConfigModule.forRoot(),
 TypeOrmModule.forRootAsync({
-	useClass: DevService,
+	useClass: ProdService,
     imports: [ConfigModule],
 
 }),
